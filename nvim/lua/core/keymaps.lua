@@ -44,4 +44,7 @@ map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+-- Bufferline
+map ('n', '<leader>[', ':BufferLinePick<CR>')
+map ('n', '<leader>]', ':BufferLinePickClose<CR>')
 

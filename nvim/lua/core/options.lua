@@ -1,3 +1,4 @@
+-- $HOME/.config/nvim/lua/core/options.lua
 local g = vim.g       -- Global variables
 local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 -----------------------------------------------------------
@@ -7,6 +8,7 @@ opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = true                  -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
+opt.cursorline = true               -- highlist current line
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------

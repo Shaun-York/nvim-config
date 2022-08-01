@@ -1,4 +1,5 @@
 -- $HOME/.config/nvim/lua/core/bufferline.lua
+-- https://github.com/akinsho/bufferline.nvim
 ---------------------------------------------------------
 -- Bufferline config
 local status_ok, bufferline = pcall(require, 'bufferline')
@@ -11,7 +12,7 @@ bufferline.setup {
     close_command = "bdelete! %d",
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",
-    indicator_icon = '▎',
+    indicator_icon = ' ',
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
