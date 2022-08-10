@@ -59,6 +59,13 @@ return packer.startup(function(use)
       'hrsh7th/vim-vsnip',
     },
   }
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = {
+      {'nvim-lua/plenary.nvim'}, {'kdheepak/lazygit.nvim'}}
+  }
+  -- Snippets
   use {
     'hrsh7th/cmp-vsnip',
     after = 'nvim-cmp',
@@ -81,6 +88,11 @@ return packer.startup(function(use)
     config = function()
       require('gitsigns').setup{}
     end
+  }
+  -- Toggle Terminal
+  use {
+    'akinsho/toggleterm.nvim',
+    tag = 'v2.*',
   }
   -- Dashboard (start screen)
   use {
