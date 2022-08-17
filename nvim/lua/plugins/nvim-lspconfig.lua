@@ -123,3 +123,9 @@ require'lspconfig'.dockerls.setup{
   single_file_support = true
 }
 
+-- eslint
+require'lspconfig'.eslint.setup{}
+
+--Go gopls
+require'lspconfig'.gopls.setup{}
+

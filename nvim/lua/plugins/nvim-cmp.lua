@@ -3,6 +3,11 @@ local cmp_status_ok, cmp = pcall(require, 'cmp')
 if not cmp_status_ok then
   return
 end
+
+if cmp == nil then
+  return
+end
+
 cmp.setup {
   -- Load snippet support
   snippet = {

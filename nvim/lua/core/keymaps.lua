@@ -32,19 +32,35 @@ map('n', '<leader>s', ':w<CR>')
 map('i', '<leader>s', '<C-c>:w<CR>')
 -- Close all windows and exit from Neovim with <leader> and q
 map('n', '<leader>q', ':qa!<CR>')
------------------------------------------------------------
+-- Move lines
+-- nnoremap <A-j> :m .+1<CR>==
+-- nnoremap <A-k> :m .-2<CR>==
+-- inoremap <A-j> <Esc>:m .+1<CR>==gi
+-- inoremap <A-k> <Esc>:m .-2<CR>==gi
+-- vnoremap <A-j> :m '>+1<CR>gv=gv
+-- vnoremap <A-k> :m '<-2<CR>gv=gv
+map('n', '<A-up>', ':m .-2<CR>==')
+map('n', '<A-down>', ':m .+1<CR>==')
+----------------------------------------------------------
 -- Applications and Plugins shortcuts
------------------------------------------------------------
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
+-----------------------------------------------------------
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
 -- Bufferline
 map ('n', '<leader>[', ':BufferLinePick<CR>')
 map ('n', '<leader>]', ':BufferLinePickClose<CR>')
+
+map ('n', '<A-right>', ':BufferLineCycleNext<CR>')
+map ('n', '<A-left>', ':BufferLineCyclePrev<CR>')
+-- Telescope
+map('n', '<leader>tg', ':Telescope live_grep<CR>')
+map('n', '<leader>tb', ':Telescope buffers<CR>')
+map('n', '<leader>th', ':Telescope help_tags<CR>')
 

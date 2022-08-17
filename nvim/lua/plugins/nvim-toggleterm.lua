@@ -58,7 +58,7 @@ toggleterm.setup({
     winblend = 3,
   },
   winbar = {
-    enabled = false,
+    enabled = true,
     name_formatter = function(term) --  term: Terminal
       return term.name
     end
