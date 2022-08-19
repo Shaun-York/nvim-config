@@ -41,7 +41,11 @@ map('n', '<leader>q', ':qa!<CR>')
 -- vnoremap <A-k> :m '<-2<CR>gv=gv
 map('n', '<A-up>', ':m .-2<CR>==')
 map('n', '<A-down>', ':m .+1<CR>==')
-----------------------------------------------------------
+map('v', '<A-up>', ':m \'>-2<CR>gv=gv')
+map('v', '<A-down>', ':m \'>+1<CR>gv=gv')
+map('i', '<A-up>', '<Esc>:m .-2<CR>==gi')
+map('i', '<A-down>', '<Esc>:m .+1<CR>==gi')
+---------------------------------------------------------
 -- Applications and Plugins shortcuts
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
