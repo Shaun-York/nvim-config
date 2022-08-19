@@ -33,12 +33,6 @@ map('i', '<leader>s', '<C-c>:w<CR>')
 -- Close all windows and exit from Neovim with <leader> and q
 map('n', '<leader>q', ':qa!<CR>')
 -- Move lines
--- nnoremap <A-j> :m .+1<CR>==
--- nnoremap <A-k> :m .-2<CR>==
--- inoremap <A-j> <Esc>:m .+1<CR>==gi
--- inoremap <A-k> <Esc>:m .-2<CR>==gi
--- vnoremap <A-j> :m '>+1<CR>gv=gv
--- vnoremap <A-k> :m '<-2<CR>gv=gv
 map('n', '<A-up>', ':m .-2<CR>==')
 map('n', '<A-down>', ':m .+1<CR>==')
 map('v', '<A-up>', ':m \'>-2<CR>gv=gv')
