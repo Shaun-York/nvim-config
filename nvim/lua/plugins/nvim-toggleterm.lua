@@ -5,7 +5,8 @@ end
 
 local Terminal  = require('toggleterm.terminal').Terminal
 local curr_buff_path = string.match(vim.api.nvim_buf_get_name(0), "^/.+/")
-local lazygit = Terminal:new({ cmd = "lazygit", dir = curr_buff_path, hidden = true })
+local command = "lazygit " .. "--work-tree=" .. curr_buff_path
+local lazygit = Terminal:new({ cmd = command, dir = curr_buff_path, hidden = true })
 
 function Lazygit_toggle()
   lazygit:toggle()
