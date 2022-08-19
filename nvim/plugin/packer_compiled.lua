@@ -107,6 +107,11 @@ _G.packer_plugins = {
     path = "/home/crm114/.local/share/nvim/site/pack/packer/opt/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/crm114/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["feline.nvim"] = {
     loaded = true,
     path = "/home/crm114/.local/share/nvim/site/pack/packer/start/feline.nvim",

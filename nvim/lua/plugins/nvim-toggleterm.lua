@@ -3,6 +3,16 @@ if not toggleterm_status_ok then
   return
 end
 
+local Terminal  = require('toggleterm.terminal').Terminal
+local curr_buff_path = string.match(vim.api.nvim_buf_get_name(0), "^/.+/")
+local lazygit = Terminal:new({ cmd = "lazygit", dir = curr_buff_path, hidden = true })
+
+function Lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua Lazygit_toggle()<CR>", {noremap = true, silent = true})
+
 toggleterm.setup({
   -- size can be a number or function which is passed the current terminal
   size = function(term)
@@ -13,7 +23,9 @@ toggleterm.setup({
     end
   end,
   open_mapping = [[<c-\>]],
-  --on_open = function(t: tmux), -- function to run when the terminal opens
+  on_open = function(t)
+    t.cmd = 'lazygit'
+  end, -- function to run when the terminal opens
   --on_close = fun(t: Terminal), -- function to run when the terminal closes
   --on_stdout = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stdout
   --on_stderr = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stderr

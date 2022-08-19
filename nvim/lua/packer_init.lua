@@ -28,10 +28,10 @@ if not status_ok then
 end
 -- Install plugins
 return packer.startup(function(use)
-  -- GitHub CoPilot
-  use 'github/copilot.vim'
   -- Add you plugins here:
   use 'wbthomason/packer.nvim' -- packer can manage itself
+  -- GitHub CoPilot
+  use 'github/copilot.vim'
   -- File explorer
   use 'kyazdani42/nvim-tree.lua'
   -- Indent line
