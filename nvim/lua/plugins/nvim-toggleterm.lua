@@ -3,9 +3,17 @@ if not toggleterm_status_ok then
   return
 end
 
+local function isNil(x)
+  return x == nil or x == ''
+end
+
 local Terminal  = require('toggleterm.terminal').Terminal
-local curr_buff_path = string.match(vim.api.nvim_buf_get_name(0), "^/.+/")
-local command = "lazygit " .. "--work-tree=" .. curr_buff_path
+local curbufloc = string.match(vim.api.nvim_buf_get_name(0), "^/.+/")
+if isNil(curbufloc) then
+  local command = "lazygit"
+else
+  local command = "lazygit " .. "--work-tree=" .. curbufloc
+end
 local lazygit = Terminal:new({ cmd = command, dir = curr_buff_path, hidden = true })
 
 function Lazygit_toggle()

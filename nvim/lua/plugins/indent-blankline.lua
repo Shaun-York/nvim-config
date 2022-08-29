@@ -6,7 +6,7 @@ end
 
 indent_blankline.setup {
   char = "▏",
-  use_treesitter = true,
+  use_treesitter = false,
   show_first_indent_level = true,
   filetype_exclude = {
     'help',
