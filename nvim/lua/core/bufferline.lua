@@ -12,7 +12,9 @@ bufferline.setup {
     close_command = "bdelete! %d",
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",
-    --indicator_icon = ' ', deprecated
+    indicator = {
+      icon = ' '
+    },
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
@@ -26,7 +28,7 @@ bufferline.setup {
     max_name_length = 18,
     max_prefix_length = 15,
     tab_size = 18,
-    diagnostics = true,
+    diagnostics = "nvim_lsp",
     diagnostics_indicator = function(count, level)
       return "("..count.."_"..level..")"
     end,

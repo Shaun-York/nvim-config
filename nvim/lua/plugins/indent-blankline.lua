@@ -21,6 +21,12 @@ indent_blankline.setup {
   },
   buftype_exclude = {
     'terminal',
+    'lspinfo',
+    'packer',
+    'help',
+    'checkheath',
+    'man',
+    "",
     'nofile',
   },
 }

@@ -10,19 +10,16 @@ autocmd('TextYankPost', {
     vim.highlight.on_yank({ higroup = 'IncSearch', timeout = '1000' })
   end
 })
-
 -- Remove whitespace on save
 autocmd('BufWritePre', {
   pattern = '*',
   command = ":%s/\\s\\+$//e"
 })
-
 -- Don't auto commenting new lines
 autocmd('BufEnter', {
   pattern = '*',
   command = 'set fo-=c fo-=r fo-=o'
 })
-
 -- Settings for filetypes:
 -- Disable line length marker
 augroup('setLineLength', { clear = true })
@@ -31,7 +28,6 @@ autocmd('Filetype', {
   pattern = { 'text', 'markdown', 'html', 'xhtml', 'javascript', 'typescript' },
   command = 'setlocal cc=0'
 })
-
 -- Set indentation to 2 spaces
 augroup('setIndent', { clear = true })
 autocmd('Filetype', {
@@ -41,23 +37,19 @@ autocmd('Filetype', {
   },
   command = 'setlocal shiftwidth=2 tabstop=2'
 })
-
 -- Terminal settings:
 -- Open a Terminal on the right tab
 autocmd('CmdlineEnter', {
   command = 'command! Term :botright split term://$SHELL'
 })
-
 -- Enter insert mode when switching to terminal
 autocmd('TermOpen', {
   command = 'setlocal listchars= nonumber norelativenumber nocursorline',
 })
-
 autocmd('TermOpen', {
   pattern = '*',
   command = 'startinsert'
 })
-
 -- Close terminal buffer on process exit
 autocmd('BufLeave', {
   pattern = 'term://*',

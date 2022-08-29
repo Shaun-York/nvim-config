@@ -5,7 +5,5 @@ if not cmp_status_ok then
 end
 
 
-copilot.setup{
-
-}
+copilot.setup{}
 
