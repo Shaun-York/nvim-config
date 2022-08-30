@@ -13,7 +13,7 @@ bufferline.setup {
     right_mouse_command = "bdelete! %d",
     left_mouse_command = "buffer %d",
     indicator = {
-      icon = ' '
+      style = 'underline',
     },
     buffer_close_icon = '',
     modified_icon = '●',
@@ -29,8 +29,10 @@ bufferline.setup {
     max_prefix_length = 15,
     tab_size = 18,
     diagnostics = "nvim_lsp",
+    diagnostics_update_in_insert = true,
     diagnostics_indicator = function(count, level)
-      return "("..count.."_"..level..")"
+      local icon = level:match("error") and '' or ''
+      return " "..count.." "..icon.." "
     end,
     offsets = {{filetype = "NvimTree", text = "nvimtree", text_align = "center"}},
     show_buffer_icons = true,

@@ -7,6 +7,8 @@ if not status_ok then
   return
 end
 
+local cat_colors = require("catppuccin.palettes").get_palette()
+
 color_scheme.setup({
 	dim_inactive = {
 		enabled = true,
@@ -14,7 +16,7 @@ color_scheme.setup({
 		percentage = 0.15,
 	},
 	transparent_background = true,
-	term_colors = true,
+	term_colors = false,
 	compile = {
 		enabled = false,
 		path = vim.fn.stdpath "cache" .. "/catppuccin",
@@ -61,7 +63,7 @@ color_scheme.setup({
 		nvimtree = {
 			enabled = true,
 			show_root = true,
-			transparent_panel = false,
+			transparent_panel = true,
 		},
 		neotree = {
 			enabled = false,
@@ -97,6 +99,12 @@ color_scheme.setup({
 	},
 	color_overrides = {},
 	highlight_overrides = {},
+  custom_highlights = {
+    LineNr = {
+      fg = cat_colors.yellow,
+      bg = cat_colors.blackfire,
+    }
+  },
 })
 
 color_scheme.load()
@@ -104,6 +112,10 @@ color_scheme.load()
 -- import with: require('colors').colorscheme_name
 local M = {}
 
+M.catppuccin = {
+  bg = cat_colors.lavender,
+  fg = cat_colors.yellow,
+}
 -- Theme: OneDark (dark)
 -- Colors: https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua
 M.onedark_dark = {
@@ -145,3 +157,4 @@ M.rose_pine = {
 }
 
 return M
+

@@ -32,6 +32,8 @@ local lsp_get_diag = function(str)
 end
 
 local separator = '|'
+local left_bubble = ''
+local right_bubble = ''
 
 -- My components
 local comps = {
@@ -51,8 +53,8 @@ local comps = {
         }
         return set_color
       end,
-      left_sep = ' ',
-      right_sep = ' ',
+      left_sep = left_bubble,
+      right_sep = right_bubble .. ' ',
     }
   },
   -- Parse file information:
@@ -66,7 +68,7 @@ local comps = {
           file_modified_icon = '',
         }
       },
-      hl = { fg = colors.cyan },
+      hl = { fg = colors.pink },
       icon = '',
     },
     -- File type
@@ -78,11 +80,11 @@ local comps = {
         if icon == nil then
           icon = ' '
         end
-        return ' ' .. icon .. ' ' .. type
+        return ' ' .. icon .. ' ' .. type .. ' '
       end,
       hl = { fg = colors.fg },
       left_sep = {
-        str = ' ' .. separator,
+        str = separator,
         hl = { fg = colors.fg },
       },
       righ_sep = ' ',
@@ -103,7 +105,7 @@ local comps = {
       end,
       hl = { fg = colors.fg },
       left_sep = {
-        str = ' ' .. separator,
+        str = separator,
         hl = { fg = colors.fg },
       },
       right_sep = {
@@ -171,8 +173,8 @@ local comps = {
       provider = 'lsp_client_names',
       icon = '  ',
       hl = { fg = colors.pink },
-      left_sep = '  ',
-      right_sep = ' ',
+      left_sep = ' ' .. left_bubble,
+      right_sep = right_bubble .. ' ',
     }
   },
   -- git info

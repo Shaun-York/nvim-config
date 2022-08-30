@@ -8,7 +8,7 @@ if cmp == nil then
   return
 end
 
-cmp.setup {
+cmp.setup({
   -- Load snippet support
   snippet = {
       expand = function(args)
@@ -17,8 +17,8 @@ cmp.setup {
     },
 -- Completion settings
   completion = {
-    --completeopt = 'menu,menuone,noselect'
-    keyword_length = 2
+    completeopt = 'menu,menuone,noselect',
+    keyword_length = 2,
   },
   -- Key mapping
   mapping = {
@@ -36,13 +36,13 @@ cmp.setup {
     },
   },
   -- Load sources, see: https://github.com/topics/nvim-cmp
-  sources = {
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
     { name = 'buffer' },
     { name = 'path' },
-  },
-}
+  }),
+})
   -- `/` cmdline setup.
   cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
@@ -60,4 +60,8 @@ cmp.setup {
       { name = 'cmdline' }
     })
   })
+-- lspconfig
+--local lsp_server = vim.lsp.commands
+-- vim.lsp.get_active_clients()
+--local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 

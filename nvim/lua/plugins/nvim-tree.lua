@@ -40,10 +40,10 @@ nvim_tree.setup {
     },
   },
   renderer = {
-    add_trailing = false,
+    add_trailing = true,
     group_empty = false,
-    highlight_git = false,
-    highlight_opened_files = "none",
+    highlight_git = true,
+    highlight_opened_files = "all",
     root_folder_modifier = ":~",
     indent_markers = {
       enable = true,
@@ -105,8 +105,8 @@ nvim_tree.setup {
     args = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = false,
+    enable = true,
+    show_on_dirs = true,
     icons = {
       hint = "",
       info = "",

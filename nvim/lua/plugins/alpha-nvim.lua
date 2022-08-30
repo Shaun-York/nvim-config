@@ -27,7 +27,6 @@ local banner = {
 }
 
 dashboard.section.header.val = banner
--- Menu
 dashboard.section.buttons.val = {
   dashboard.button('e', '  New file', ':ene <BAR> startinsert<CR>'),
   dashboard.button('f', '  Find file', ':NvimTreeOpen<CR>'),
