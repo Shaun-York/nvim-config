@@ -115,9 +115,28 @@ require'lspconfig'.dockerls.setup{
 -- eslint
 require'lspconfig'.eslint.setup{}
 --Go gopls
-require'lspconfig'.gopls.setup{}
+require'lspconfig'.gopls.setup{
+	cmd = {'gopls'},
+	-- for postfix snippets and analyzers
+	capabilities = capabilities,
+	    settings = {
+	      gopls = {
+		      experimentalPostfixCompletions = true,
+		      analyses = {
+		        unusedparams = true,
+		        shadow = true,
+		     },
+		     staticcheck = true,
+		    },
+	    },
+	on_attach = on_attach,
+}
 -- Rust
 require'lspconfig'.rust_analyzer.setup{
   filetypes = {"rs", "Cargo.toml"}
 }
+-- Bash
+require'lspconfig'.bashls.setup{}
+-- YAML
+require'lspconfig'.yamlls.setup{}
 

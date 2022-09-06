@@ -112,10 +112,7 @@ color_scheme.load()
 -- import with: require('colors').colorscheme_name
 local M = {}
 
-M.catppuccin = {
-  bg = cat_colors.lavender,
-  fg = cat_colors.yellow,
-}
+M.cat_colors = cat_colors
 -- Theme: OneDark (dark)
 -- Colors: https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua
 M.onedark_dark = {

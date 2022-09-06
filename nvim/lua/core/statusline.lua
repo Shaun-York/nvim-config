@@ -53,7 +53,7 @@ local comps = {
         }
         return set_color
       end,
-      left_sep = left_bubble,
+      left_sep = ' ' .. left_bubble,
       right_sep = right_bubble .. ' ',
     }
   },
@@ -101,7 +101,7 @@ local comps = {
         else
           icon = '  '
         end
-        return icon .. os
+        return icon
       end,
       hl = { fg = colors.fg },
       left_sep = {
@@ -109,7 +109,7 @@ local comps = {
         hl = { fg = colors.fg },
       },
       right_sep = {
-        str = ' ' .. separator,
+        str =  separator,
         hl = { fg = colors.fg },
       },
     },

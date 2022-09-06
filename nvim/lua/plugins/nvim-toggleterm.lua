@@ -10,11 +10,11 @@ end
 local Terminal  = require('toggleterm.terminal').Terminal
 local curbufloc = string.match(vim.api.nvim_buf_get_name(0), "^/.+/")
 if isNil(curbufloc) then
-  local command = "lazygit"
+   Cmd = "lazygit"
 else
-  local command = "lazygit " .. "--work-tree=" .. curbufloc
+   Cmd = "lazygit " .. "--work-tree=" .. curbufloc
 end
-local lazygit = Terminal:new({ cmd = command, dir = curr_buff_path, hidden = true })
+local lazygit = Terminal:new({ cmd = Cmd, hidden = true })
 
 function Lazygit_toggle()
   lazygit:toggle()
